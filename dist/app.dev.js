@@ -114,6 +114,12 @@ app.post("/clear", function (req, res) {
   res.redirect("/");
 }); //Initializing Server
 
-app.listen(3000, function () {
-  console.log("Server running on Port:3000...");
+var port = process.env.PORT;
+
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function () {
+  console.log("Server running on Port:" + port + "...");
 });
