@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") -%>
+
+<h1><%=reqPost.name%></h1>
+<p><%=reqPost.msg%></p>
+
+<form action="/delete" class="delete" method="POST">
+  <button
+    type="submit"
+    value="<%=reqPost.name%>"
+    name="deleteRequest"
+    class="btn btn-danger"
+  >
+    Delete Post
+  </button>
+</form>
+
+<%- include("partials/footer.ejs") -%>
