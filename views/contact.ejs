@@ -1,5 +1,33 @@
 <%- include("partials/header.ejs") -%>
-    <h1>Contact Us</h1>
-    <p><%= pagePost %> </p>
-    
+<div class="box">
+  <h1>Contact Us</h1>
+  <p><%= pagePost %></p>
+</div>
+<div class="container">
+  <form action="/">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="name@example.com"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Message:</label>
+      <textarea
+        class="form-control"
+        placeholder="your message..."
+        id="exampleFormControlTextarea1"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+
+    <button class="btn btn-secondary contact" type="submit">Submit</button>
+  </form>
+</div>
+
 <%- include("partials/footer.ejs") -%>

@@ -26,9 +26,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express["static"]("public"));
-var homeStartingContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur at quaerat nobis amet cum quibusdam, neque deserunt? Aliquid, explicabo adipisci soluta, aliquam, inventore debitis laborum amet sapiente dignissimos repellat deleniti! Abos sit amet consectetur adipisicing elit. Pariatur at quaerat nobis amet cum quibusdam, neque deserunt? Aliquid, explicabo adipisci soluta, aliquam, inventore debitis laborum amet sapiente dignissimos.";
-var aboutContent = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.";
-var contactContent = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.";
+var homeStartingContent = "Foodbook like facebook, is a social media application where food enthusiasts of every background can unite! Here, you can read and share your own recipes as well as tips and tricks used in the kictchen, amongst eachother. Scroll down to see what others have shared or type '/compose' at the end of the url to compose your own post and share your food related activity!";
+var aboutContent = "At Foodbook we have our very own in-house professional chefs. These chefs are very active on Foodbook, sharing their own personal recipes and tips that they use when making delicous dishes.";
+var contactContent = "If you have any questions about our services or would just like to say hello, feel free to shoot us a message!";
 var posts = [];
 app.get("/", function (req, res) {
   Blog.find(function (err, found) {

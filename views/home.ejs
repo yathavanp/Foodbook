@@ -1,12 +1,53 @@
 <%- include("partials/header.ejs") -%>
-<h1>Home</h1>
-<p><%= pagePost %></p>
 
-<% allPosts.forEach(function(post){ %>
+<div
+  id="carouselExampleControls"
+  class="carousel slide crs"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/img/home/collection.jpeg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="/img/home/tacos.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="/img/home/asain.jpg" class="d-block w-100" alt="..." />
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
 
-<h1><%=post.name%></h1>
-<p>
-  <%=post.msg.substring(0,300) + "..."%>
-  <a href="/posts/<%=post.name%>">Read More</a>
-</p>
-<%}); %> <%- include("partials/footer.ejs") -%>
+<div class="box">
+  <h1>Welcome to Foodbook!</h1>
+  <p><%= pagePost %></p>
+
+  <% allPosts.forEach(function(post){ %>
+
+  <h1><%=post.name%></h1>
+  <p>
+    <%=post.msg.substring(0,300) + "..."%>
+    <a href="/posts/<%=post.name%>">Read More</a>
+  </p>
+  <%}); %>
+</div>
+
+<%- include("partials/footer.ejs") -%>

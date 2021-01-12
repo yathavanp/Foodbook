@@ -1,5 +1,84 @@
 <%- include("partials/header.ejs") -%>
-    <h1>About Us</h1>
-    <p><%= pagePost %> </p>
-    
+<div class="box">
+  <h1>Meet our chefs</h1>
+  <p><%= pagePost %></p>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="/img/chefs/caio-carden.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Caio Carden</h5>
+          <h6 class="card-text">Head Chef at Gusteau's</h6>
+          <h6 class="card-text">
+            Favourite Dish:
+            <span> Ratatouille</span>
+          </h6>
+          <h6 class="card-text">
+            Favourite Tip:
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </h6>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Joined Foodbook 2 years ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="/img/chefs/italo-melo.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Italo Melo</h5>
+          <h6 class="card-text">Sous Chef at Vesuvio</h6>
+          <h6 class="card-text">
+            Favourite Dish:
+            <span> Pasta de supranos</span>
+          </h6>
+          <h6 class="card-text">
+            Favourite Tip:
+            <span>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.</span
+            >
+          </h6>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Joined Foodbook 2 years ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img
+          src="/img/chefs/luriko-yamaguchi.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Luriko Yamaguchi</h5>
+          <h6 class="card-text">Executive Chef at Tiana's Palace</h6>
+          <h6 class="card-text">
+            Favourite Dish:
+            <span> Bounty from the Bayou</span>
+          </h6>
+          <h6 class="card-text">
+            Favourite Tip:
+            <span>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.</span
+            >
+          </h6>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Joined Foodbook 7 months ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <%- include("partials/footer.ejs") -%>
