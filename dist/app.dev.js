@@ -43,7 +43,7 @@ app.get("/", function (req, res) {
     }
   });
 });
-app.get("/about", function (req, res) {
+app.get("/our-chefs", function (req, res) {
   res.render("about.ejs", {
     pagePost: aboutContent
   });
