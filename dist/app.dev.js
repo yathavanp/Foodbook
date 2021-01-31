@@ -1,6 +1,8 @@
 "use strict";
 
 //Initializing dependancies
+require("dotenv").config();
+
 var express = require("express");
 
 var bodyParser = require("body-parser");
@@ -9,9 +11,10 @@ var ejs = require("ejs");
 
 var _ = require("lodash");
 
-var mongoose = require("mongoose");
+var mongoose = require("mongoose"); //Initilaizing MongoDB and Schema
 
-mongoose.connect("mongodb+srv://admin-yaddy:Test123@cluster0.ennyk.gcp.mongodb.net/blogDB", {
+
+mongoose.connect(process.env.DB_ROUTE, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -25,11 +28,13 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(express["static"]("public"));
+app.use(express["static"]("public")); //Iintializing Page Content and Post Array
+
 var homeStartingContent = "Foodbook like facebook, is a social media application where food enthusiasts of every background can unite! Here, you can read and share your own recipes as well as tips and tricks used in the kictchen, amongst eachother. Scroll down to see what others have shared or type '/compose' at the end of the url to compose your own post and share your food related activity!";
 var aboutContent = "At Foodbook we have our very own in-house professional chefs. These chefs are very active on Foodbook, sharing their own personal recipes and tips that they use when making delicous dishes.";
 var contactContent = "If you have any questions about our services or would just like to say hello, feel free to shoot us a message!";
-var posts = [];
+var posts = []; //GET and POST Methods
+
 app.get("/", function (req, res) {
   Blog.find(function (err, found) {
     if (err) {

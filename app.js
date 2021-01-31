@@ -1,16 +1,16 @@
 //Initializing dependancies
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
-mongoose.connect(
-  "mongodb+srv://admin-yaddy:Test123@cluster0.ennyk.gcp.mongodb.net/blogDB",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+
+//Initilaizing MongoDB and Schema
+mongoose.connect(process.env.DB_ROUTE, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const blogSchema = {
   name: String,
@@ -25,6 +25,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+//Iintializing Page Content and Post Array
 const homeStartingContent =
   "Foodbook like facebook, is a social media application where food enthusiasts of every background can unite! Here, you can read and share your own recipes as well as tips and tricks used in the kictchen, amongst eachother. Scroll down to see what others have shared or type '/compose' at the end of the url to compose your own post and share your food related activity!";
 
@@ -36,6 +37,7 @@ const contactContent =
 
 let posts = [];
 
+//GET and POST Methods
 app.get("/", function (req, res) {
   Blog.find(function (err, found) {
     if (err) {

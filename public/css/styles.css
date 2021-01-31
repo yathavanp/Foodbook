@@ -39,16 +39,6 @@ body{
     color: #ffffff !important;
 }
 
-.splitscreen {
-    display:inline-block;
-}
-.splitscreen .left {
-    flex: 1;
-}
-.splitscreen .right {
-    flex: 1;
-}
-
 .delete{
     margin-top: 50px;
 }
